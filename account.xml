@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+
+        <record model="ir.action.act_window" id="act_asset_lines">
+            <field name="name">Asset Lines</field>
+            <field name="res_model">account.asset.line</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_asset_lines_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="account_asset.asset_line_view_tree"/>
+            <field name="act_window" ref="act_asset_lines"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_asset_lines_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="account_asset.asset_line_view_form"/>
+            <field name="act_window" ref="act_asset_lines"/>
+        </record>
+        <menuitem parent="account_asset.menu_asset_form" sequence="10"
+            action="act_asset_lines" id="menu_asset_lines"/>
+
+    </data>
+</tryton>
